@@ -4,14 +4,14 @@ import (
 	_ "embed"
 )
 
-//go:embed combined-with-oceans.pb
+//go:embed timezones.pb
 var FullData []byte
 
-//go:embed combined-with-oceans.reduce.pb
+//go:embed timezones.reduce.pb
 var LiteData []byte
 
-//go:embed combined-with-oceans.reduce.compress.pb
+//go:embed timezones.reduce.compress.pb
 var LiteCompressData []byte
 
-//go:embed combined-with-oceans.reduce.preindex.pb
+//go:embed timezones.reduce.preindex.pb
 var PreindexData []byte

@@ -1,3 +1,3 @@
-module github.com/ringsaturn/tzf-rel
+module github.com/deslittle/pinpoint-timezones
 
-go 1.18
+go 1.19

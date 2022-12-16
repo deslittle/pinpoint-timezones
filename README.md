@@ -1,19 +1,19 @@
-# [tzf](https://github.com/ringsaturn/tzf)'s preprocessed timezone data
+# [pinpoint](https://github.com/deslittle/pinpoint)'s preprocessed timezone location data
+
 
 ## Update Data Steps
 
-1. Download latest `timezones-with-oceans.geojson.zip` from https://github.com/evansiroky/timezone-boundary-builder/releases
-2. Run:
+1. Run:
 
    ```bash
    # Install cli tools
    make install
    # Produce new data
    make gen
+   # Remove intermediate files
+   make clean
    # stage
-   git add combined-with-oceans.pb
-   git add combined-with-oceans.reduce.pb
-   git add combined-with-oceans.reduce.compress.pb
+   git add -A
    # commit
    git commit -m "bump to xxx"
    git push
@@ -21,15 +21,13 @@
 
 ## Refer
 
-- Protocol Buffers define: <https://github.com/ringsaturn/tzf/blob/main/pb/tzinfo.proto>
+- Protocol Buffers define: <https://github.com/deslittle/pinpoint/blob/main/pb/locinfo.proto>
 - Maintain tools
-  - [`geojson2tzpb`](https://github.com/ringsaturn/tzf/tree/main/cmd/geojson2tzpb)
-  - [`reducetzpb`](https://github.com/ringsaturn/tzf/tree/main/cmd/reducetzpb)
-  - [`compresstzpb`](https://github.com/ringsaturn/tzf/tree/main/cmd/compresstzpb)
-  - [`preindextzpb`](https://github.com/ringsaturn/tzf/tree/main/cmd/preindextzpb)
-- To view data in GeoJSON format(which is more convenient to show on map), see <https://github.com/ringsaturn/tzf-server>
-
+  - [`geojson2name`](https://github.com/deslittle/pinpoint/tree/main/cmd/geojson2locpb)
+  - [`geojson2locpb`](https://github.com/deslittle/pinpoint/tree/main/cmd/geojson2locpb)
+  - [`reducelocpb`](https://github.com/deslittle/pinpoint/tree/main/cmd/reducelocpb)
+  - [`compresslocpb`](https://github.com/deslittle/pinpoint/tree/main/cmd/compresslocpb)
+  - [`preindexlocpb`](https://github.com/deslittle/pinpoint/tree/main/cmd/preindexlocpb)
 Usage:
 
-- Go: <https://github.com/ringsaturn/tzf>
-- Rust: <https://github.com/ringsaturn/tzf-rs>
+- Go: <https://github.com/deslittle/pinpoint>
